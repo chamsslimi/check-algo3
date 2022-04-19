@@ -1,0 +1,32 @@
+
+ALGORITHM procedure dot_product
+VAR
+    arr1,arr2:ARRAY_OF_INTEGER;
+    ps:INTEGER;
+    i:INTEGER;
+BEGIN
+  FOR i FROM 0 TO arr1.length-1 STEP 1  DO
+      read(arr1[i]);
+      read(arr2[i]);
+  END_FOR
+  ps:=dot_product(arr1,arr2) ;
+  IF (ps:=0) THEN
+      write ("vectors are orthogonal");
+  ELSE
+      write("vectors are not orthogonal")
+  END_IF
+
+END
+// function
+FUNCTION dot_product(arr1,arr2:ARRAY_OF_INTEGER) : INTEGER
+VAR
+    ps:INTEGER;
+    
+BEGIN
+  
+    ps:=0;
+    FOR i FROM 0 TO max arr1.length-1 step 1 DO
+       ps=ps+(arr1[i]*arr2[i]); 
+    END_FOR
+    RETURN ps ;
+END
